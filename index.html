@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="img/Logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Snake Extreme</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">🐍 SNAKE EXTREME</h1>
+            <br><br><br>
+        </div>
+
+        <div class="game-area">
+            <!-- Panel izquierdo: controles y bayas -->
+            <div class="left-panel">
+                <div class="panel-section controls-info">
+                    <h3 class="section-title"><i class="fas fa-gamepad"></i> Controles</h3>
+                    <p><i class="fas fa-arrow-up"></i> Flechas o WASD para mover</p>
+                    <p><i class="fas fa-pause"></i> ESPACIO o P para pausar</p>
+                    <p><i class="fas fa-redo"></i> R o botón para reiniciar</p>
+                    <p><i class="fas fa-play"></i> ENTER para comenzar</p>
+                </div>
+                <div class="panel-section">
+                    <h3 class="section-title"><i class="fas fa-apple-alt"></i> Bayas & Poderes</h3>
+                    <div class="power-info">
+                        <div class="power-item">
+                            <div class="power-color" style="background-color: #ff4757;"></div>
+                            <span>Normal: +1 punto</span>
+                        </div>
+                        <div class="power-item">
+                            <div class="power-color" style="background-color: #ffa502;"></div>
+                            <span>Dorada: +2 puntos</span>
+                        </div>
+                        <div class="power-item">
+                            <div class="power-color" style="background-color: #00d2d3;"></div>
+                            <span>Velocidad: +3 puntos</span>
+                        </div>
+                        <div class="power-item">
+                            <div class="power-color power-unknown" style="background-color: #9b59b6;">★</div>
+                            <span>Arcoíris: +4 puntos</span>
+                        </div>
+                        <div class="power-item">
+                            <div class="power-color power-unknown">?</div>
+                            <span>Especial: +5 puntos</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Centro: Tablero de juego -->
+            <div class="game-center">
+                <div class="game-board-container">
+                    <div class="game-board">
+                        <canvas id="gameCanvas"></canvas>
+                        <div class="immortal-indicator" id="immortalIndicator">INMORTAL</div>
+                        <div class="power-active" id="powerActiveIndicator">
+                            <i class="fas fa-bolt"></i> <span id="powerActiveText"></span>
+                        </div>
+
+                        <div class="game-status" id="gameStatus">
+                            <h2 class="status-title game-start" id="statusTitle">¡SNAKE EXTREME!</h2>
+                            <p class="status-message" id="statusMessage">Usa las flechas o WASD para moverte<br>Presiona
+                                ENTER o START para comenzar</p>
+
+                            <div class="game-buttons">
+                                <button class="action-btn start-btn" id="startBtn">
+                                    <i class="fas fa-play"></i> START
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Panel derecho: Puntuación y poderes -->
+            <div class="right-panel">
+                <div class="panel-section">
+                    <div class="time-display" id="gameTime">00:00</div>
+                </div>
+                <div class="panel-section">
+                    <div class="score-display">
+                        <div class="score-label">PUNTUACIÓN</div>
+                        <div class="score-value" id="score">0</div>
+                        <div class="high-score">RÉCORD: <span id="highScore">0</span></div>
+                    </div>
+
+                    <div class="combo-display">
+                        <div class="combo-label">COMBO</div>
+                        <div class="combo-value" id="combo">x1</div>
+                    </div>
+                    <div class="game-buttons" style="margin-top: 15px;
+                    ">
+                        <button class="action-btn pause-btn" id="pauseBtn">
+                            <i class="fas fa-pause"></i> PAUSA
+                        </button>
+                        <button class="action-btn reset-btn" id="resetBtn">
+                            <i class="fas fa-redo"></i> REINICIAR
+                        </button>
+                    </div>
+
+                </div>
+
+
+
+
+                <input type="range" min="50" max="300" value="150" class="speed-slider" id="speedSlider">
+                <div id="speedValue" style="text-align: center; color: #8a8dff;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+
+</html>
